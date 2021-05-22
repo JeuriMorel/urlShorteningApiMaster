@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" href="./dist/css/styles.css">
+
+    <title>Frontend Mentor | Shortly URL shortening API Challenge</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="header_nav">
+        <img
+          src="./images/logo.svg"
+          alt="shortly logo"
+          class="header_nav-img"
+        />
+
+        <ul class="header_nav-links">
+          <li class="header_nav-links-link"><a href="#">Features</a></li>
+          <li class="header_nav-links-link"><a href="#">Pricing</a></li>
+          <li class="header_nav-links-link"><a href="#">Resources</a></li>
+        </ul>
+
+        <ul class="header_nav-login">
+          <li class="header_nav-login-login"><a href="#">Login</a></li>
+          <li class="header_nav-login-signup"><a href="#">Sign Up</a></li>
+        </ul>
+
+        <div class="header_nav-hamburger"></div>
+
+        <div class="header_nav-mobile closed">
+          <div class="header_nav-mobile-div">
+            <ul class="header_nav-mobile-div-links">
+              <li class="header_nav-mobile-div-links-link">Features</li>
+              <li class="header_nav-mobile-div-links-link">Pricing</li>
+              <li class="header_nav-mobile-div-links-link">Resources</li>
+            </ul>
+          </div>
+          <div class="header_nav-mobile-login">
+            <ul class="header_nav-mobile-login-links">
+              <div class="header_nav-mobile-login-links-login">Login</div>
+              <div class="header_nav-mobile-login-links-sign-up">Sign Up</div>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="hero">
+      <div class="hero_box">
+        <div class="hero_box-img"></div>
+        <div class="hero_box-text">
+          <h1 class="hero_box-text-h1">More than just shorter links</h1>
+          <p class="hero_box-text-p">
+            Build your brand’s recognition and get detailed insights on how your
+            links are performing.
+          </p>
+          <a href="#" class="hero_box-text-btn">Get Started</a>
+        </div>
+      </div>
+
+      <div class="hero_shorten">
+        <form action="submit" class="hero_shorten_form">
+          <input
+            type="url"
+            class="hero_shorten_form-input"
+            placeholder="Shorten a link here..."
+          />
+          <button type="submit" class="hero_shorten_form-btn">
+            Shorten It!
+          </button>
+        </form>
+      </div>
+    </main>
+
+    <section class="section">
+      <div class="section-text">
+        <h2 class="section-text-h2">Advanced Statistics</h2>
+        <p class="section-text-p">
+          Track how your links are performing across the web with our advanced
+          statistics dashboard.
+        </p>
+      </div>
+
+      <div class="section-cards">
+
+        <div class="section-cards-line"></div>
+        <div class="section-cards-card recognition">
+          <div class="section-cards-card-img">
+            <img src="./images/icon-brand-recognition.svg" />
+          </div>
+          <h3 class="section-cards-card-h3">Brand Recognition</h3>
+          <p class="section-cards-card-p">
+            Boost your brand recognition with each click. Generic links don’t
+            mean a thing. Branded links help instil confidence in your content.
+          </p>
+        </div>
+
+        <div class="section-cards-card records">
+          <div class="section-cards-card-img">
+            <img src="./images/icon-detailed-records.svg" />
+          </div>
+          <h3 class="section-cards-card-h3">Detailed Records</h3>
+          <p class="section-cards-card-p">
+            Gain insights into who is clicking your links. Knowing when and
+            where people engage with your content helps inform better decisions.
+          </p>
+        </div>
+
+        <div class="section-cards-card customizable">
+          <div class="section-cards-card-img">
+            <img src="./images/icon-fully-customizable.svg" />
+          </div>
+          <h3 class="section-cards-card-h3">Fully Customizable</h3>
+          <p class="section-cards-card-p">
+            Improve brand awareness and content discoverability through
+            customizable links, supercharging audience engagement.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-top">
+        <h4 class="footer-top-h4">Boost your links today</h4>
+        <a href="#" class="footer-top-a"> Get Started </a>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-box">
+          <img
+            src="./images/logo-white.svg"
+            alt="shortly logo"
+            class="footer-bottom-box-img"
+          />
+
+          <ul class="footer-bottom-box-features">
+            Features
+            <li class="footer-bottom-box-features-link">Link Shortening</li>
+            <li class="footer-bottom-box-features-link">Branded Links</li>
+            <li class="footer-bottom-box-features-link">Analytics</li>
+          </ul>
+
+          <ul class="footer-bottom-box-resources">
+            Resources
+            <li class="footer-bottom-box-resources-link">Blog</li>
+            <li class="footer-bottom-box-resources-link">Developers</li>
+            <li class="footer-bottom-box-resources-link">Support</li>
+          </ul>
+
+          <ul class="footer-bottom-box-company">
+            Company
+            <li class="footer-bottom-box-company-link">About</li>
+            <li class="footer-bottom-box-company-link">Our Team</li>
+            <li class="footer-bottom-box-company-link">Careers</li>
+            <li class="footer-bottom-box-company-link">Contact</li>
+          </ul>
+
+          <div class="footer-bottom-box-social">
+            <img src="./images/icon-facebook.svg" alt="facebook" />
+            <img src="./images/icon-twitter.svg" alt="twitter" />
+            <img src="./images/icon-pinterest.svg" alt="pinterest" />
+            <img src="./images/icon-instagram.svg" alt="instagram" />
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
