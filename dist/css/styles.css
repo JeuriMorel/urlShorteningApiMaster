@@ -1,5 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
 /* Colors */
+@keyframes fetching {
+  0% {
+    left: -20px;
+    height: 10px;
+    width: 4px;
+  }
+  50% {
+    height: 3px;
+    width: 20px;
+  }
+  100% {
+    left: 140px;
+    height: 10px;
+    width: 4px;
+  }
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -209,8 +226,45 @@ html, body {
   background-color: #3b3054;
 }
 
+.hero_shorten .loader {
+  position: relative;
+  left: 50%;
+  display: none;
+  transform: translateX(-50%);
+  color: #2acfcf;
+  font-size: 12px;
+  top: 10px;
+}
+
+.hero_shorten .loader::before, .hero_shorten .loader::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 4px;
+  height: 10px;
+  background-color: #2acfcf;
+  animation: fetching 1s infinite alternate ease-in-out;
+}
+
+.hero_shorten .loader::before {
+  top: 0;
+}
+
+.hero_shorten .loader::after {
+  bottom: 0;
+}
+
 .hero_shorten_form {
   padding: 25px;
+}
+
+.hero_shorten_form.error input {
+  border: 2px solid #f46262;
+  color: rgba(244, 98, 98, 0.7);
+}
+
+.hero_shorten_form.error small {
+  display: block;
 }
 
 .hero_shorten_form-input {
@@ -221,6 +275,7 @@ html, body {
   border-radius: 5px;
   padding-left: 20px;
   font-family: "Poppins", sans-serif;
+  outline: none;
 }
 
 .hero_shorten_form-input::placeholder {
@@ -237,12 +292,86 @@ html, body {
   background-color: #2acfcf;
   color: white;
   font-size: 20px;
+  cursor: pointer;
+}
+
+.hero_shorten_form-btn:hover {
+  background-color: #9ce3e2;
+}
+
+.hero_shorten_form small {
+  display: none;
+  position: absolute;
+  color: #f46262;
+  font-style: italic;
+  font-size: 12px;
+  left: 25px;
+  bottom: 17px;
 }
 
 .section {
   background-color: #f0f1f6;
-  padding-top: 170px;
+  padding-top: 120px;
   padding-bottom: 10px;
+}
+
+.section .short {
+  position: relative;
+  width: calc(100vw - 60px);
+  max-width: 1110px;
+  min-height: 75px;
+  border-radius: 5px;
+  padding: 5px 25px 5px 30px;
+  background-color: #ffffff;
+  margin: 0 auto 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 25px;
+}
+
+.section .short span {
+  color: #2acfcf;
+  margin-left: auto;
+}
+
+.section .short button {
+  background-color: #2acfcf;
+  position: relative;
+  color: #ffffff;
+  height: 40px;
+  width: 100px;
+  border-radius: 5px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.section .short button:hover {
+  background-color: rgba(42, 207, 207, 0.6);
+}
+
+.section .short button:active {
+  transform: scale(0.95);
+}
+
+.section .short button::after {
+  background-color: #232127;
+  content: "Copied!";
+  position: absolute;
+  display: inline-block;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 5px;
+  vertical-align: middle;
+  line-height: 40px;
+}
+
+.section .short button.copied::after {
+  z-index: 10;
 }
 
 .section-text {

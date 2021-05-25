@@ -11,7 +11,7 @@
       href="./images/favicon-32x32.png"
     />
 
-    <link rel="stylesheet" href="./dist/css/styles.css">
+    <link rel="stylesheet" href="./dist/css/styles.css" />
 
     <title>Frontend Mentor | Shortly URL shortening API Challenge</title>
   </head>
@@ -69,6 +69,8 @@
       </div>
 
       <div class="hero_shorten">
+        <div class="loader">Shortening your link...</div>
+
         <form action="submit" class="hero_shorten_form">
           <input
             type="url"
@@ -78,6 +80,7 @@
           <button type="submit" class="hero_shorten_form-btn">
             Shorten It!
           </button>
+          <small>Please add a link</small>
         </form>
       </div>
     </main>
@@ -92,7 +95,6 @@
       </div>
 
       <div class="section-cards">
-
         <div class="section-cards-line"></div>
         <div class="section-cards-card recognition">
           <div class="section-cards-card-img">
