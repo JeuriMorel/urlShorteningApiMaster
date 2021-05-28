@@ -31,6 +31,13 @@ document.addEventListener(
   true
 );
 
+const checkLinks = () => {
+  let links = document.querySelectorAll('.short')
+  if (links.length > 4) {
+    links[4].remove();
+  }
+}
+
 const shortenUrl = async (url) => {
   try {
     let res = await fetch(`https://api.shrtco.de/v2/shorten?url=${url}`);
@@ -40,7 +47,9 @@ const shortenUrl = async (url) => {
       form.classList.add("error");
       return;
     }
+    checkLinks();
     createUrlDiv(data.result);
+    addToStorage();
     loader.style.display = "none";
     form.reset();
   } catch (error) {
@@ -56,8 +65,7 @@ const createUrlDiv = ({ original_link: long, full_short_link: short }) => {
 
 const showCopied =(btn)=>{
   const children = [...section.children]
-  children.forEach(child => child.children[1].classList.remove('copied'))
-  console.log(children)
+  children.forEach(child => child.children[2]?.classList.remove('copied'))
   btn.classList.add('copied')
 }
 
@@ -72,10 +80,22 @@ const copyLink = async (e) => {
   }
 }
 
+const addToStorage = () => {
+  const shortLinkDivs = Array.from(document.querySelectorAll(".short"));
+
+  let storageDivs = shortLinkDivs.map(div => {
+    return [div.children[0].textContent, div.children[1].textContent] 
+  })
+  localStorage.setItem('linkDivs', JSON.stringify(storageDivs))
+}
+
 const createFragment = (long, short) => {
   let fragment = document.createElement("div");
   fragment.className = "short";
-  fragment.innerHTML = `${long}
+  fragment.innerHTML = `
+  <p>
+  ${long}
+  </p>
   <span>
   ${short}
   </span>
@@ -83,3 +103,14 @@ const createFragment = (long, short) => {
 
   return fragment;
 };
+
+window.addEventListener('load', () => {
+  let linkDivs = JSON.parse(localStorage.getItem("linkDivs"));
+  if (!linkDivs) {
+    return
+  }
+  linkDivs.forEach(linkDiv => {
+    let div = createFragment(linkDiv[0], linkDiv[1]);
+    section.prepend(div);
+  })
+})

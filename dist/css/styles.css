@@ -72,6 +72,10 @@ html, body {
   color: #9e9aa7;
 }
 
+.header_nav-login a:hover {
+  color: #35323e;
+}
+
 .header_nav-login-signup {
   background-color: #2acfcf;
   width: 100px;
@@ -87,6 +91,10 @@ html, body {
 .header_nav-login-signup a {
   color: #ffffff;
   display: block;
+}
+
+.header_nav-login-signup a:hover {
+  color: white;
 }
 
 .header_nav-hamburger {
@@ -319,6 +327,7 @@ html, body {
   position: relative;
   width: calc(100vw - 60px);
   max-width: 1110px;
+  min-width: 0;
   min-height: 75px;
   border-radius: 5px;
   padding: 5px 25px 5px 30px;
@@ -330,9 +339,14 @@ html, body {
   gap: 25px;
 }
 
+.section .short p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .section .short span {
   color: #2acfcf;
-  margin-left: auto;
 }
 
 .section .short button {
@@ -600,6 +614,9 @@ html, body {
   .header_nav-hamburger,
   .header_nav-mobile {
     display: none;
+  }
+  .short span {
+    margin-left: auto;
   }
 }
 
